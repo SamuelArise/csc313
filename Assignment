@@ -1,0 +1,132 @@
+QUESTION 1A:
+
+public class NigerianFlagSingleLoop {
+    public static void main(String[] args) {
+        int width = 21;    // Adjust the width as needed
+        int height = 9;    // Adjust the height as needed
+        int greenWidth = 6; // Width of the green section
+        int whiteWidth = 9; // Width of the white section
+
+        for (int i = 0; i < height; i++) {
+            // Print green section
+            for (int j = 0; j < greenWidth; j++) {
+                System.out.print("*");
+            }
+            // Print white section
+            for (int j = 0; j < whiteWidth; j++) {
+                System.out.print("=");
+            }
+            // Print green section again
+            for (int j = 0; j < greenWidth; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+QUESTION 1B:
+public class NigerianFlagNestedLoop {
+    public static void main(String[] args) {
+        int width = 21;  // Adjust the width as needed
+        int height = 9;  // Adjust the height as needed
+        int greenWidth = 6;  // Width of the green section
+        int whiteWidth = 9;  // Width of the white section
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                if (j < greenWidth || j >= width - greenWidth) {
+                    System.out.print("*");
+                } else {
+                    System.out.print("=");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+QUESTION 2A:
+public class FlagPatternSingleLoop {
+    public static void main(String[] args) {
+        int width = 21;  // Width of the flag
+        int height = 9;  // Height of the flag
+        for (int i = 0; i < height * width; i++) {
+            if (i % width < 6 || i % width >= 15) { 
+                System.out.print("*"); // Green part
+            } else {
+                System.out.print("=");
+            }
+            if (i % width == width - 1) {
+                System.out.println();
+            }
+        }
+    }
+}
+QUESTION 2B:
+public class FlagPatternNestedLoop {
+    public static void main(String[] args) {
+        int width = 21;  // Width of the flag
+        int height = 9;  // Height of the flag
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                if (j < 6 || j >= 15) {  // Green part
+                    System.out.print("*");
+                } else {
+                    System.out.print("=");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+QUESTION 3:
+import java.util.Scanner;
+public class UserInputArray {
+    public static void main(String[] args) {
+        int[] numbers = new int[10]; // Declare an array of length 10
+        Scanner scanner = new Scanner(System.in);
+
+        // Loop to accept input from the user
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print("Enter a number for index " + i + ": ");
+            numbers[i] = scanner.nextInt();
+        }
+        // Using a for-each loop to print out the input entered by the user
+        System.out.println("The numbers you entered are:");
+        for (int number : numbers) {
+            System.out.println(number);
+        }
+        scanner.close();
+    }
+}
+
+QUESTION 4:
+import java.util.Scanner;
+
+public class UserInput2DArray {
+    public static void main(String[] args) {
+        int[][] numbers = new int[10][10]; // Declare a 2D array of size 10
+        Scanner scanner = new Scanner(System.in);
+
+        // Nested loop to accept input from the user
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers[i].length; j++) {
+                System.out.print("Enter a number for index [" + i + "][" + j + "]: ");
+                numbers[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Using a for-each loop to print out the input entered by the user
+        System.out.println("The numbers you entered are:");
+        for (int[] row : numbers) {
+            for (int number : row) {
+                System.out.print(number + " ");
+            }
+            System.out.println(); // New line for each row
+        }
+
+        scanner.close();
+    }
+}
